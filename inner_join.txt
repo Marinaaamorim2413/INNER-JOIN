@@ -1,0 +1,37 @@
+create database innerJoin03_09;
+
+create table Alunos(
+id int auto_increment primary key,
+nome varchar (250),
+curso varchar (250),
+idade int
+);
+
+create table Curso(
+nome varchar (250) primary key,
+duracao int,
+descricao varchar (500)
+);
+
+SELECT * FROM `alunos`;
+SELECT * FROM `curso`;
+
+insert into Alunos (nome,curso,idade) values ("Marina Amorim","Desenvolvimento de Sistemas",16),
+("Felipe Amaral","Administração",27),
+("Geovanna Soares","Nutrição",18),
+("Kauã Silva","Administração",17),
+("Bianca Moraes","Desenvolvimento de Sistemas",22);
+
+INSERT INTO Curso (nome,duracao,descricao) VALUES ("Administração",12,"Execel, Word..."), 
+("Desenvolvimento de Sistemas",24,)
+("Programação Web, Banco de dados..."), 
+("Nutrição",15,"sei la...");
+
+SELECT Alunos.nome, Alunos.idade, Curso.descricao 
+FROM Alunos
+INNER JOIN Curso ON Alunos.curso = Curso.nome;
+
+SELECT Alunos.nome, Alunos.idade
+FROM Alunos
+INNER JOIN Curso ON Alunos.curso = Curso.nome
+WHERE Curso.nome = "Administração";
